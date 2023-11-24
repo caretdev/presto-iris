@@ -1,0 +1,29 @@
+version: '3'
+services:
+  iris:
+    image: intersystemsdc/iris-community
+    ports:
+      - 1972
+      - 52773
+    environment:
+      IRIS_USERNAME: _SYSTEM
+      IRIS_PASSWORD: SYS
+  presto:
+    build: .
+    volumes:
+      - ./iris.properties:/opt/presto-server/etc/catalog/iris.properties
+    ports:
+      - 8080:8080
+  superset:
+    image: apache/superset:3.0.2
+    platform: linux/amd64
+    environment:
+      SUPERSET_SECRET_KEY: supersecret
+#      SUPERSET_SQLALCHEMY_EXAMPLES_URI: presto://admin@presto:8080/postgres
+      SUPERSET_SQLALCHEMY_EXAMPLES_URI: iris://_SYSTEM:SYS@iris:1972/USER
+    volumes:
+      - ./superset_entrypoint.sh:/superset_entrypoint.sh
+      - ./superset_config.py:/app/pythonpath/superset_config.py
+    ports:
+      - 8088:8088
+    entrypoint: /superset_entrypoint.sh
