@@ -1,6 +1,6 @@
 # Presto InterSystems IRIS Connector
 
-![img_1.png](images/img_1.png)
+![PrestoDB](https://raw.githubusercontent.com/caretdev/presto-iris/main/images/prestologo_black.png)
 
 [Presto](https://prestodb.io/) is a powerful interactive querying engine that enables running SQL queries on anything -- be it MySQL, HDFS, local file, Kafka -- as long as there exist a connector to the source.
 
@@ -47,21 +47,21 @@ Presto UI will be availble on this link http://localhost:8080/ui/#
 When SuperSet will finish load examples after 10-15 minutes, it should became available by link http://localhost:8088/databaseview/list
 Using admin/admin as username/password
 
-![img.png](images/img.png)
+![img.png](https://raw.githubusercontent.com/caretdev/presto-iris/main/images/img.png)
 
 Superset connected to Presto, and catalog iris, which configured to connect to IRIS
 
 Now go to Dashboards
 
-![img_2.png](images/img_2.png)
+![img_2.png](https://raw.githubusercontent.com/caretdev/presto-iris/main/images/img_2.png)
 
 Going to [Presto UI](http://localhost:8080/ui/#) we can see that Presto executed queries, and see some statistics
 
-![img_3.png](images/img_3.png)
+![img_3.png](https://raw.githubusercontent.com/caretdev/presto-iris/main/images/img_3.png)
 
 The same data from IRIS can be observed by using Presto connector in DBeaver
 
-![img_5.png](images/img_5.png)
+![img_5.png](https://raw.githubusercontent.com/caretdev/presto-iris/main/images/img_5.png)
 
 
-![img_4.png](images/img_4.png)
+![img_4.png](https://raw.githubusercontent.com/caretdev/presto-iris/main/images/img_4.png)
